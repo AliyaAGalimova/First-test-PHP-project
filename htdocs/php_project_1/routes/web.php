@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BooksController;
+use App\Http\Controllers\AuthorsController;
 
+Route::resource('api/v1name/books', BooksController::class);
+Route::resource('authors', AuthorsController::class);
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +18,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('list_books');
 });
+
+Route::get('/crud_authors', function () {
+    return view('crud_authors');
+});
+
+Route::get('/crud_books', function () {
+    return view('crud_books');
+});
+
+
